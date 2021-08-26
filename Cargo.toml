@@ -1,0 +1,23 @@
+[package]
+name = "warp_rpc_example"
+version = "0.1.0"
+authors = ["Michael Koukoullis <mike@kouky.org>"]
+edition = "2018"
+license = "MIT"
+repository = "https://github.com/kouky/warp_rpc_example"
+keywords = [ "warp", "reqwest", "rpc", "http", "json", "service" ]
+readme = "README.md"
+description = "Warp RPC Example"
+
+[workspace]
+members = [
+    "greeting_client",
+    "greeting_server",
+]
+
+[dependencies]
+warp_rpc = { git = "https://github.com/kouky/warp_rpc" }
+tokio = { version = "1", features = ["full"] }
+greeting_client = { path = "greeting_client" }
+log = "0.4"
+env_logger = "0.9"
